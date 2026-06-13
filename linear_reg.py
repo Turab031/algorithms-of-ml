@@ -42,3 +42,15 @@ y_pred
 # %%
 y_test
 # %%
+
+from sklearn.metrics import r2_score
+r2=r2_score(y_test,y_pred)
+
+
+# %%
+n = x_test.shape[0]
+p = x_test.shape[1]
+
+adjusted_r2 = 1-((1-r2)*(n-1)/(n-p-1))
+adjusted_r2
+# %%
