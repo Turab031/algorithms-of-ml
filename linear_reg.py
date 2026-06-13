@@ -53,4 +53,6 @@ p = x_test.shape[1]
 
 adjusted_r2 = 1-((1-r2)*(n-1)/(n-p-1))
 adjusted_r2
-# %%
+# %% one hot encoding
+
+
