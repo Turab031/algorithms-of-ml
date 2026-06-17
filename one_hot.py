@@ -56,4 +56,10 @@ r2 = r2_score(y_test,y_pred)
 
 print(r2)
 # %%
+y_train_pred = model.predict(x_train)
+r2_train = r2_score(y_train,y_train_pred)
+print(r2_train)
+print(r2)
+
   
+# %%
