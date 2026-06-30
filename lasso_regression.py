@@ -1,6 +1,6 @@
 #%% 
 from sklearn.linear_model import Lasso
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error,r2_score
 from sklearn.model_selection import train_test_split
 import numpy as np
 
@@ -51,4 +51,27 @@ for a in alphas:
 
 
 sns.lineplot(x=alphas,y=mses,marker="o")
+# %%
+from sklearn.linear_model import LassoCV
+# %%
+
+a = [0.001,0.1,1,2,5,10,20,30,40,50,1000] 
+
+lasso_cv_model = LassoCV(
+    alphas =a,
+    cv=5,
+    max_iter=1000,
+    random_state=42
+
+)
+
+lasso_cv_model.fit(x_train,y_train)
+print("best alpha model:",lasso_cv_model.alpha_)
+
+
+y_pred = lasso_cv_model.predict(x_test)
+mse = mean_squared_error(y_test,y_pred)
+r2 = r2_score(y_test,y_pred)
+print("mse =",mse)
+print("r2=",r2)
 # %%
