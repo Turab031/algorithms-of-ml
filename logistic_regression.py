@@ -48,7 +48,18 @@ y_pred = model.predict(x_test)
 print("Accuracy:",accuracy_score(y_test,y_pred)*100,"%")
 print("Precision:",precision_score(y_test,y_pred)*100,"%")
 # %%
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix,accuracy_score,precision_score,recall_score,f1_score
 # %%
 confusion_matrix(y_test,y_pred)
+
+
+# %%
+print("accuracy score=",accuracy_score(y_test,y_pred))
+print("precision score=",precision_score(y_test,y_pred))
+print("recall score=",recall_score(y_test,y_pred))
+print("f1 score=",f1_score(y_test,y_pred))
+
+
+
+
 # %%
